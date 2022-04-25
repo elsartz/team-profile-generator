@@ -1,6 +1,6 @@
 const Engineer = require('../lib/Engineer.js');
 
-test("test engineer's name, school", () => {
+test("test engineer's name, GitHub username", () => {
     const engineer = new Engineer('Name', 'gituser');
 
     expect(engineer.name).toBe('Name');
@@ -8,7 +8,7 @@ test("test engineer's name, school", () => {
 });
 
 test("test engineer's role", () => {
-    const engineer = new Engineer('Name', 'Carleton');
+    const engineer = new Engineer('Name', 'gituser');
 
     expect(engineer.getRole()).toBe('Engineer');
 });
