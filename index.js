@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const {writeFile, copyFile} = require('./src/generate-site.js');
+const generatePage = require('./src/page-template');
 
 const promptManager = () => {
     return inquirer.prompt([
@@ -141,7 +142,7 @@ const promptEmployee = (teamData) => {
         return promptEmployee(teamData);       // function with the parameter otherwise will start over
       } else {   
           console.log(totalData);                                  
-        return teamData;                      // else return the current data
+        return generatePage(teamData);                      // else return the current data
       }
     })
     .then(pageHTML => {
