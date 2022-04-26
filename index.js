@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-
+const {writeFile, copyFile} = require('./src/generate-site.js');
 
 const promptManager = () => {
     return inquirer.prompt([
@@ -64,7 +64,7 @@ const promptEmployee = (teamData) => {
       Add a New Employee
       =================
       `);
-  return inquirer.prompt([                         // questions for a new project
+  return inquirer.prompt([                         // questions for a new employee
     {
         type: 'list',
         name: 'id2',
@@ -138,12 +138,25 @@ const promptEmployee = (teamData) => {
       teamData.push(employeeData);    // the promise into an array
       totalData.push(employeeData);
       if (employeeData.confirmAddEmployee) {         // if user wants to add more employee (true)
-        return promptEmployee(teamData);       // function with the parameter otherwise will
+        return promptEmployee(teamData);       // function with the parameter otherwise will start over
       } else {   
-          console.log(totalData);                                  //   start over
+          console.log(totalData);                                  
         return teamData;                      // else return the current data
       }
     })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+      })
+      .then(writeFileResponse => {
+        console.log(writeFileResponse);
+        return copyFile();
+      })
+      .then(copyFileResponse => {
+        console.log(copyFileResponse);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }; 
 
 const totalData = [];
