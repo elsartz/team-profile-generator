@@ -136,18 +136,20 @@ const promptEmployee = (teamData) => {
    ])
     .then(employeeData => {
       teamData.push(employeeData);    // the promise into an array
+      totalData.push(employeeData);
       if (employeeData.confirmAddEmployee) {         // if user wants to add more employee (true)
         return promptEmployee(teamData);       // function with the parameter otherwise will
-      } else {                                     //   start over
+      } else {   
+          console.log(totalData);                                  //   start over
         return teamData;                      // else return the current data
       }
     })
   }; 
 
-const teamData = [];
+const totalData = [];
 promptManager()
-    .then(answers => {teamData.push(answers);
-        console.log(teamData);
+    .then(answers => {totalData.push(answers);
+        console.log(totalData);
     })
     .then(promptEmployee);
  
