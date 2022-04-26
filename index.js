@@ -56,7 +56,9 @@ const promptManager = () => {
 }
 
 const promptEmployee = (teamData) => {
-    
+    if (!teamData) {
+        teamData = [];
+      }
       console.log(`
       =================
       Add a New Employee
@@ -67,15 +69,20 @@ const promptEmployee = (teamData) => {
         type: 'list',
         name: 'id2',
         message: 'Provide a type for the employee',
-        choices: ['Engineer', 'Intern'],
-        // when: ({id2}) => {
-        //     if (id2 === 'Engineer') {
-        //         console.log('engineer')
-        //     } else {
-        //         console.log('intern')
-        //     }
-        // }
+        choices: ['Engineer', 'Intern']
     },  
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter his/her GitHub username ',
+        when: (input) => input.id2 === 'Engineer'
+    },
+    {
+        type: 'input',
+        name: 'school',
+        message: "Please enter intern's school ",
+        when: (input) => input.id2 === 'Intern'
+    },
     {
       type: 'input',
       name: 'name',
@@ -139,5 +146,8 @@ const promptEmployee = (teamData) => {
 
 const teamData = [];
 promptManager()
-    .then(answers => teamData.push(answers))
-    .then(promptEmployee)
+    .then(answers => {teamData.push(answers);
+        console.log(teamData);
+    })
+    .then(promptEmployee);
+ 
