@@ -56,7 +56,7 @@ const generateEmployee = employeeArr => {
 module.exports = templateData => {
   // destructure page data by section
   const  employee  = templateData;
-  
+  console.log('This is the data in page template:',employee);
 
   return `
   <!DOCTYPE html>

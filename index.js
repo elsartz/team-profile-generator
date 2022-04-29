@@ -56,6 +56,7 @@ const promptManager = () => {
     ]);
 }
 
+const totalData = [];
 const promptEmployee = (teamData) => {
     if (!teamData) {
         teamData = [];
@@ -141,8 +142,8 @@ const promptEmployee = (teamData) => {
       if (employeeData.confirmAddEmployee) {         // if user wants to add more employee (true)
         return promptEmployee(teamData);       // function with the parameter otherwise will start over
       } else {   
-          console.log(totalData);                                  
-        return generatePage(teamData);                      // else return the current data
+          console.log('index file:', totalData);                                  
+        return generatePage(totalData);                      // else return the current data
       }
     })
     .then(pageHTML => {
@@ -160,7 +161,7 @@ const promptEmployee = (teamData) => {
       });
   }; 
 
-const totalData = [];
+
 promptManager()
     .then(answers => {totalData.push(answers);
         console.log(totalData);
