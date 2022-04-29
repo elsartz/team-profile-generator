@@ -133,7 +133,7 @@ const promptEmployee = (teamData) => {
         type: 'confirm',
         name: 'confirmAddEmployee',
         message: 'Would you like to enter another employee?',
-        default: false
+        default: 'false'
         }
    ])
     .then(employeeData => {
@@ -141,8 +141,7 @@ const promptEmployee = (teamData) => {
       totalData.push(employeeData);
       if (employeeData.confirmAddEmployee) {         // if user wants to add more employee (true)
         return promptEmployee(teamData);       // function with the parameter otherwise will start over
-      } else {   
-          console.log('index file:', totalData);                                  
+      } else {                                   
         return generatePage(totalData);                      // else return the current data
       }
     })

@@ -1,7 +1,8 @@
+/* stylesheet is borrowed */
 :root {
-  --primary: #9dbdc6;
+  --primary: #fe2605;
   --secondary: #daeaef;
-  --tertiary: #ff3d2e;
+  --tertiary: #3a33ff;
   --light: #ffffff;
   --dark: #272f32;
   --border-radius: 0.3rem;
@@ -125,8 +126,9 @@ nav a:hover {
 
 /* CARDS */
 .card {
-  margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
+  margin: 0 0 0 0;
+  border-right: 4px solid var(--dark);
+  border-bottom: 4px solid var(--dark);
   border-radius: var(--border-radius);
 }
 

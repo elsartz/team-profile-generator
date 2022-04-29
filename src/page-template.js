@@ -1,8 +1,28 @@
-const Employee = require('../lib/Employee');
-const Manager = require('../lib/Manager');
-const Engineer = require('../lib/Engineer');
-const Intern = require('../lib/Intern');
+let Employee = require('../lib/Employee');
+let Manager = require('../lib/Manager');
+let Engineer = require('../lib/Engineer');
+let Intern = require('../lib/Intern');
 
+const generateManager = manager => {
+  const {name, id, email, officeNumber} = Manager;
+
+  return `
+        <div class="flex-row justify-space-around">
+          <div class="card mb-2 mr-4">
+            <div class="col-3 mb-1 bg-tertiary text-light p-3">
+              <h3 class="text-light">${name}</h3>
+              <i class="fas fa-mug-hot mr-3"> Manager</i>
+            </div>
+          <div class="bg-light text-dark p-3">
+            </br>
+              <p>ID: ${id}</p>
+              <p>Email: ${email}</p>
+              <p> Office number: ${officeNumber}</p>
+            </br>
+          </div>     
+        </div>    
+  `;
+}
 
 
 const generateEmployee = employeeArr => {
@@ -51,17 +71,32 @@ const generateEmployee = employeeArr => {
     </section>
   `;
 };
-
+let engineer = [];
+let intern = [];
 
 module.exports = templateData => {
-  // destructure page data by section
+  
   const  employee  = templateData;
-  console.log('This is the data in page template:',employee);
+  // add manager
+  Manager = employee[0];
+  
+  for (var i=1; i<employee.length; i++) {
+    if (employee[i].id2 === 'Engineer') {
+        // add engineer
+        Engineer = employee[i];
+        engineer.push(Engineer);     
+    } else {     
+        // add intern
+        Intern = employee[i];
+        intern.push(Intern);      
+    }
+  }
+// console.log('ENGINEERS',engineer);
+// console.log('INTERNS',intern);
 
   return `
   <!DOCTYPE html>
   <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,13 +109,14 @@ module.exports = templateData => {
 
   <body>
     <header>
-      <div class="container flex-row text-center align-center py-3">
+      <div class="container flex-row justify-center align-center py-3">
         <h1 class="page-title text-secondary py-2 px-3">My team</h1>
       </div>
     </header>
     <main class="container my-5">
-      
-       
+      <section>
+      ${generateManager(employee)}
+      </section>       
     </main>
     <footer class="container text-center py-3">
       <h3 class="text-dark">&copy; ${new Date().getFullYear()} by Vardis Sartzetakis</h3>
