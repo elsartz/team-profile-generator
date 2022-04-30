@@ -1,4 +1,4 @@
-let Employee = require('../lib/Employee');
+
 let Manager = require('../lib/Manager');
 let Engineer = require('../lib/Engineer');
 let Intern = require('../lib/Intern');
@@ -54,7 +54,7 @@ const generateIntern = () => {
 
   for (var i=0; i<intern.length; i++) {
     // const {name, id, email, school} = Intern;
-  str +=   `
+  str += `
         <div class="flex-row justify-space-around">
           <div class="card mb-2 mr-4">
             <div class="col-3 mb-1 bg-tertiary text-light p-3">
@@ -71,7 +71,7 @@ const generateIntern = () => {
         </div>    
   `;
   }
- return str;
+    return str;
 };
 
 
@@ -92,8 +92,8 @@ module.exports = templateData => {
         intern.push(Intern);      
     }
   }
-console.log('ENGINEERS',engineer);
-console.log('INTERNS',intern);
+// console.log('ENGINEERS',engineer);
+// console.log('INTERNS',intern);
 
   return `
   <!DOCTYPE html>

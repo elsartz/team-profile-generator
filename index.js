@@ -146,7 +146,11 @@ const promptEmployee = (teamData) => {
       }
     })
     .then(pageHTML => {
+      
+      if(pageHTML) {
         return writeFile(pageHTML);
+      }
+       
       })
       .then(writeFileResponse => {
         console.log(writeFileResponse);
