@@ -26,39 +26,35 @@ const generateManager = () => {
         </div>    
   `;
 }
-// const newEngineer = engineer.map(generateEngineer);
 
-// function generateEngineer() {
-const generateEngineer = () => {
 
-  for (var i=0; i<engineer.length; i++) {
-    // const {name, id, email, github} = Engineer;
-
+const generateEngineer = (engineer) => {
 
     return `
         <div class="flex-row justify-space-around">
           <div class="card mb-2 mr-4">
             <div class="col-3 mb-1 bg-tertiary text-light p-3">
-              <h3 class="text-light">${engineer[i].name}</h3>
+              <h3 class="text-light">${engineer.name}</h3>
               <i class="fas fa-glasses mr-3"> Engineer</i>
             </div>
           <div class="bg-light text-dark p-3">
             </br>
-              <p>ID: ${engineer[i].id}</p>
-              <p>Email: <a href="mailto:${engineer.email}">${engineer[i].email}</a></p>
-              <p> GitHub: <a href="https://github.com/${engineer[i].github}" target="_blank">${engineer[i].github}</a></p>
+              <p>ID: ${engineer.id}</p>
+              <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+              <p> GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
             </br>
           </div>     
         </div>    
   `;
   }
-}
+
 
 const generateIntern = () => {
+  let str = '';
 
   for (var i=0; i<intern.length; i++) {
     // const {name, id, email, school} = Intern;
-    return `
+  str +=   `
         <div class="flex-row justify-space-around">
           <div class="card mb-2 mr-4">
             <div class="col-3 mb-1 bg-tertiary text-light p-3">
@@ -75,7 +71,7 @@ const generateIntern = () => {
         </div>    
   `;
   }
- 
+ return str;
 };
 
 
@@ -96,8 +92,8 @@ module.exports = templateData => {
         intern.push(Intern);      
     }
   }
-// console.log('ENGINEERS',engineer);
-// console.log('INTERNS',intern);
+console.log('ENGINEERS',engineer);
+console.log('INTERNS',intern);
 
   return `
   <!DOCTYPE html>
@@ -121,8 +117,8 @@ module.exports = templateData => {
     <main class="container my-5">
       <section>
       ${ generateManager() }
-      ${ generateEngineer() }
-      ${ generateIntern() }
+      ${ engineer.map(engineer => generateEngineer(engineer))}
+      ${ intern.length > 0 ? generateIntern(): '' }
       </section>       
     </main>
     <footer class="container text-center py-3">
