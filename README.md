@@ -18,8 +18,8 @@
    - Then run the command ```node index``` in a terminal and follow the instructions.
 
   # Usage
-    It is a usuful directory of the emmployee. Quick and easy find the info yo want to ;)
-   
+    It is a usuful directory of the emmployee. Quick and easy find the info you want to ;)
+   ![Screenshot](https://github.com/elsartz/team-profile-generator/blob/main/screenshoot.jpeg)
 
   # Contributing
     Vardis Sartzetakis
