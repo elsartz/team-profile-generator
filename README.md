@@ -14,7 +14,9 @@
   - [Questions](#questions)
 
   # Installation
-    All you have to do is (hopefully you have already installed the Node.js and the inquirer module) download the index.js file and the 'src' directory. Then run the command 'node index' and follow the instructions.
+   - All you have to do is (hopefully you have already installed the [Node.js](https://nodejs.org/en/download/) and the [inquirer](https://www.npmjs.com/package/inquirer) module) 
+   - download the index.js file and the 'src' directory. 
+   - Then run the command ```node index``` in a terminal and follow the instructions.
 
   # Usage
     It is a usuful directory of the emmployee. Quick and easy find the info yo want to ;)
