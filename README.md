@@ -9,7 +9,6 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributing](#contributing)
-  - [License](#license)
   - [Tests](#tests)
   - [Questions](#questions)
 
@@ -20,6 +19,7 @@
 
   # Usage
     It is a usuful directory of the emmployee. Quick and easy find the info yo want to ;)
+   
 
   # Contributing
     Vardis Sartzetakis
@@ -28,8 +28,9 @@
 
   # Tests
     Tested with the Jest JavaScript Testing Framework package.
+   ![Tests](https://github.com/elsartz/team-profile-generator/blob/main/Screenshot%20of%20tests.png)
 
   # Questions
-  If you have any questions, please contact me at [email](mailto:elsartz@gmail.com).
+  If you have any questions, please contact me at my [email](mailto:elsartz@gmail.com).
   My GitHub username is *elsartz* and ...
   my GitHub profile is [profile](http://github.com/elsartz)
