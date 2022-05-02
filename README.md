@@ -21,7 +21,7 @@
     It is a usuful directory of the emmployee. Quick and easy find the info you want to ;)
    ![Screenshot](https://github.com/elsartz/team-profile-generator/blob/main/screenshoot.jpeg)
    
-   >🖐️ You can see how it works here: [Video tutorial](https://github.com/elsartz/team-profile-generator/blob/main/teamProfileGen.mp4)
+   >🖐️ You can see how it works here: [Video tutorial](https://youtu.be/0siQOgt86PY)
 
   # Contributing
     Vardis Sartzetakis
